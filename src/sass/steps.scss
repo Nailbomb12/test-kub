@@ -1,0 +1,131 @@
+
+.steps {
+  padding: 70px 0;
+  @media(max-width: 480px) {
+    padding: 20px 0;
+  }
+  &__container {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    text-align: center;
+    max-width: 573px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+
+    &-title {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__progressbar {
+    @include flex;
+    list-style: none;
+    margin-bottom: 60px;
+
+    &-item {
+      flex-grow: 1;
+      position: relative;
+      font-size: 16px;
+      line-height: 150%;
+      color: #BAD9E7;
+      text-align: center;
+      cursor: pointer;
+
+      &:first-child {
+        &::after {
+          display: none;
+        }
+      }
+
+      &.active{
+        color: $colorAccent;
+        &::before {
+          background-color: $bgAccent;
+          color: $colorAccent;
+        }
+
+        &::after {
+          background-color: $bgAccent;
+        }
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        top: 22px;
+        left: -50%;
+        z-index: -1;
+        background-color: $bgLight;
+        border-radius: 40px;
+
+      }
+
+      &::before {
+        counter-increment: steps; 
+        content: counter(steps);
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        color: $colorLight;
+        font-size: 24px;
+        font-weight: 700;
+        font-family: $titleFont;
+        line-height: 44px;
+        text-align: center;        
+        border: 3px solid #fff;
+        border-radius: 50%;
+        background-color: $bgLight;
+        transition: 0.2s;
+      }      
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    &-counter {
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 23px;
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 21px;
+    }
+
+    &-tabs {
+      align-items: flex-start;
+    }
+
+    &-item {
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      opacity: 0;
+      z-index: 0;
+      transition: all 0.3s;
+      visibility: hidden;
+
+      &--active {
+        opacity: 1;
+        z-index: 1;
+        position: static;
+        visibility: inherit;
+      }
+    }
+
+  }
+}

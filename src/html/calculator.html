@@ -1,0 +1,50 @@
+<section class="calc section">
+  <div class="container">
+    <div class="calc__inner shadow radius">
+      <h2 class="calc__title title">Calculator</h2>
+      <p class="calc__description">Nam libero tempore, cum soluta nobis est eligendi optio</p>
+      <form class="calc__block" action="#">
+        <div class="calc__param">
+          <select class="calc__element radius calc__param-colors">
+            <option disabled selected value="">Colors</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="orange">orange</option>
+          </select>
+          <select class="calc__element radius calc__param-sizes">Size
+            <option disabled selected value="">Size</option>
+            <option value="100%">100%</option>
+            <option value="150%">150%</option>
+            <option value="200%">200%</option>
+          </select>
+          <div class="calc__element radius calc__param-quantity">
+            <span class="minus" id="minus">−</span>
+            <input type="number" name="number" value="100" min="0" max="200" readonly class="result">
+            <span class="plus" id="plus">+</span>
+          </div>
+          <div class="calc__param-calendar calc__element radius">
+            <input class="" id="datepicker" type="text" autocomplete="off">
+          </div>
+          <select class="calc__element radius calc__param-city">
+            <option disabled selected value="">City</option>
+            <option value="Kyiv">Kyiv</option>
+            <option value="odessa">odessa</option>
+            <option value="rivne">rivne</option>
+            <option value="lviv">lviv</option>
+          </select>
+          <select class="calc__element radius calc__param-delivery">
+            <option disabled selected value="">Delivery</option>
+            <option value="New Post">New Post</option>
+            <option value="Ukrposhta">Ukrposhta</option>
+            <option value="Pickup">Pickup</option>
+          </select>          
+        </div>
+        <div class="calc__proceed">
+          <div class="calc__proceed-result">$ 56.25</div>
+          <button type="submit" class="calc__proceed-btn btn">Proceed</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

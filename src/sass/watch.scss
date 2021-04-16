@@ -1,0 +1,115 @@
+.watch {
+  padding-top: 60px;
+  padding-bottom: 126px;
+  @media(max-width: 480px) {
+    padding-top: 20px;
+  }
+
+  &__inner { 
+    align-items: center;
+    @media(max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    max-width: 585px;
+    @media(max-width: 1024px) {
+      max-width: inherit;
+    }
+    @media(max-width: 480px) {
+      font-size: 16px;
+    }
+  }
+
+  &__left {
+    position: relative;
+    left: -122px;
+
+    @media(max-width: 1200px) {
+      left: 0;
+    }
+
+    @media(max-width: 1024px) {
+      left: -122px;
+      margin-top: 60px;
+    }  
+
+    @media(max-width: 768px) {
+      width: 100%;
+      left: 0;
+    } 
+    
+    &-card {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      @media(max-width: 1200px) {
+        right: 40px;
+      }
+
+      @media(max-width: 1024px) {
+        bottom: 28%;
+        right: -30%;
+      }
+
+      @media(max-width: 768px) {
+        bottom: 20%;
+        right: 5px;
+      }
+
+      @media(max-width: 480px) {
+        bottom: inherit;
+        right: 0;
+        top: 70%;
+      }
+    }
+
+    &-title  {
+    }
+
+    &-text {
+    }
+  }
+
+  &__images {
+    position: relative;
+
+    @media(max-width: 1024px) {
+      max-width: 637px;
+    }
+
+    @media(max-width: 768px) {
+      max-width: inherit;
+      left: -122px;
+    }
+
+    @media(max-width: 480px) {
+      left: 0;
+    }
+
+    &-bg {
+      @media(max-width: 768px) {
+        max-width: 525px;
+      }
+    }
+
+    &-im {
+      position: absolute;
+      top: -70px;
+      left: -40px;
+
+      @media(max-width: 768px) {
+        top: -18px;
+        left: 19px;
+        max-width: 580px;
+      }
+
+      @media(max-width: 480px) {
+        top: -3px;
+        left: -60px;
+      }
+    }
+  }
+}

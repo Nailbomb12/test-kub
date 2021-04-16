@@ -1,0 +1,128 @@
+.faq {
+  padding: 88px 0;
+  @media (max-width: 768px) {
+    padding: 20px 0 92px;
+  }
+
+  &__inner {
+    max-width: 1044px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &__block {
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 16px rgba(32, 108, 164, 0.16);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // &--open {}
+
+    &-question {
+      @include flex;
+      font-size: 22px;
+
+      @media(max-width: 768px) {
+        align-items: flex-start;
+      }
+      @media(max-width: 480px) {
+        font-size: 18px;
+        line-height: 18px;
+      }
+
+      &::after {
+        content: '';
+        border-right: 2px solid #4F4B62;
+        border-bottom: 2px solid #4F4B62;
+        transform: rotate(45deg);
+        display: inline-block;
+        min-width: 8px;
+        height: 8px;
+        transition: 0.2s;
+      }
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        color: $colorAccent;
+
+        &::after {
+          cursor: pointer;
+          border-color: $colorAccent;
+        }
+      }
+
+      // &[aria-expanded='true'] {
+      //   &::after {
+      //     transform: rotate(-135deg);
+      //   }
+      //   +.faq__item-answer {
+      //     opacity: 1;
+      //     max-height: 9rem;
+      //     transition: all 200ms linear;
+      //     will-change: opacity, max-height;
+      //   }
+      // }
+    }
+
+    &-answer {
+      // opacity: 0;
+      // max-height: 0;
+      // overflow: hidden;
+      // transition: opacity 200ms linear, max-height 200ms linear;
+      // will-change: opacity, max-height;
+
+      @media(max-width: 480px) {
+        font-size: 16px;
+      }
+
+      p {
+        margin-top: 28px;
+        @media(max-width: 480px) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+}
+
+.dropdown {
+  &-toggle {
+    position: relative;
+
+    &[aria-expanded='true'] {
+      +.dropdown-content {
+        opacity: 1;
+        max-height: 12rem;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+      }
+    }
+  }
+
+  &-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+}

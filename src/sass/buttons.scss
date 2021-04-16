@@ -1,0 +1,99 @@
+.btn {
+  @include flex(center);
+  max-width: 280px;
+  width: fit-content;
+  padding: 0 33px;
+  font-size: 20px;
+  font-weight: bold;
+  height: 53px;
+  background-color: $colorAccent;
+  color: #fff;
+  border-radius: $radius;
+  border: 2px solid transparent;
+  text-decoration: none;
+  transition: .2s;
+
+  &:hover {
+    box-shadow: $shadow;
+  }
+
+  &-empty {
+    background-color: transparent;
+    color: $colorMain;
+    border-color: $colorMain;
+
+    &:hover {
+      color: $colorAccent;
+      border-color: $colorAccent;
+    }
+  }
+}
+
+
+
+/* BURGER BUTTON */
+.burger {
+  
+  // display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+  width: 20px;
+  box-sizing: content-box;
+  height: auto;
+  cursor: pointer;
+
+  @media(max-width: 900px) {
+    display: flex;
+  }
+
+  &__line {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 100%;
+    overflow: hidden;
+    background-color: $colorMain;
+
+    &_top {
+      transition: transform .15s, background-color .6s, top .15s .15s;
+      top: 0;
+    }
+
+    &_middle {
+      margin: 2px 0;
+    }
+
+    &_bottom {
+      bottom: 0;
+      transition: transform .15s, background-color .6s, bottom .15s .15s;
+      margin-bottom: 0;
+    }
+  }
+
+  &--active {
+
+    .burger__line {
+      background-color: $colorMain;
+
+      &_top {
+        transition: top .15s, background-color 0s, transform .15s .15s;
+        transform: rotate(45deg);
+        // top: 7px;
+        top: 3px;
+      }
+
+      &_middle {
+        opacity: 0;
+      }
+
+      &_bottom {
+        transform: rotate(-45deg);
+        // bottom: 7px;
+        bottom: 5px;
+        transition: bottom .15s, background-color 0s, transform .15s .15s;
+      }
+    }
+  }
+}
+/* END BURGER BUTTON */

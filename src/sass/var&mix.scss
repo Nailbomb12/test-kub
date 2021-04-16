@@ -1,0 +1,26 @@
+$colorMain:#63718E;
+$colorAccent: #C774EE;
+$colorTitle: #111563;
+$colorLight: #bad9e7;
+
+$bgLight:#e8f8ff;
+$bgAccent: #FEE5FF;
+$footerBg:#1C1E1F;
+$footerLink: #7E8183;
+
+$mainFont: 'Open Sans', 'Helvetica Neue', sans-serif;
+$titleFont: 'Epilogue', sans-serif;
+
+$radius: 10px;
+$radiusBlock: 8px;
+
+$shadow: 0px 2px 16px rgba(32, 108, 164, 0.16);
+$shadowAccent: 0px 5px 10px rgba(76, 174, 80, 0.3);
+
+
+@mixin flex($justify-content: space-between, $align-items: center,  $direction: row) {
+  display: flex;
+  @if $align-items { align-items: $align-items; }
+  @if $justify-content { justify-content: $justify-content; }
+  @if $direction { flex-direction: $direction; }
+}

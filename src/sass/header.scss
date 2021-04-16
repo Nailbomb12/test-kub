@@ -1,0 +1,139 @@
+.header {
+  font-size: 15px;
+  @media(max-width: 900px) {
+    position: relative;
+    z-index: 9;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__inner {
+    @include flex;
+    padding: 20px 0;
+    @media(max-width: 900px) {
+      background-color: #fff;
+      padding: 13px 0;
+    }
+  }
+
+  &__logo {
+    max-width: 115px;
+    line-height: 0;
+  }
+
+  &__navigation-block {
+    @include flex;
+
+    @media(max-width: 900px) {
+      flex-direction: column;
+      position: absolute;
+      
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      background-color: #fff;      
+      box-shadow: $shadow;
+
+      visibility: hidden;
+      opacity: 0;
+      top: -100%;
+      z-index: -1;
+
+      &.active {
+        transition: 0.2s;
+        visibility: visible;
+        opacity: 1;
+        top: calc(100% + 2px);        
+      }
+    }
+  }
+  
+  &__action {
+
+    &-item {
+      // @include flex;
+      display: inline-flex;
+      align-items: center;
+      color: inherit;
+      font-weight: bold;
+    }
+
+    &-search {
+      margin-right: 20px;
+
+      &::before {
+        content: url(../images/search.svg);
+        display: inline-block;
+      }
+    }
+
+    &-call {
+      &::before {
+        content: url(../images/call.svg);
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__nav {
+    @include flex;
+    margin: 0 30px;
+
+    @media(max-width: 900px) {
+      flex-direction: column;
+      margin: 20px 0;
+    }
+
+    &-item {
+      margin-right: 15px;
+      color: inherit;
+      position: relative;
+
+      @media(max-width: 900px) {
+        padding: 8px 0;
+        margin-right: 0;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;        
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        background: none repeat scroll 0 0 transparent;
+        background: $colorAccent;
+        transition: width 0.15s ease 0s, left 0.15s ease 0s;        
+      }
+
+      &:hover {
+        color: $colorAccent;
+
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  } 
+
+  &__buttons {
+    @include flex;
+
+    .header__btn {
+      height: 35px;
+      font-size: 15px;
+    }
+    .btn-empty {
+      margin-left: 30px;
+    }
+  }
+}

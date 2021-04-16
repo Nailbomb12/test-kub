@@ -1,0 +1,40 @@
+.pay {
+  padding: 50px 0;
+  @media (max-width: 768px) {
+    padding: 10px 0;
+  }
+  &__inner-row {
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  
+  &__content {
+    flex: 1;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    flex: 1;
+  }
+
+  &__tabs {
+    margin-top: 30px;
+
+    &-list {
+      padding-left: 10%;
+
+      @media(max-widtH: 768px) {
+        display: flex;
+        padding-left: 0;
+        margin-bottom: 23px;
+        overflow-x: scroll;
+        width: 100%;
+      }
+    }
+  }
+}

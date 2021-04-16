@@ -1,0 +1,58 @@
+.promo {
+  padding:80px 0 117px;
+
+  @media(max-width: 900px) {
+    padding: 67px 0 50px;
+  }
+  @media(max-width: 480px) {
+    padding-bottom: 20px;
+  }
+  &__inner {
+    @include flex(flex-end);
+    position: relative;
+
+    @media(max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    max-width: 598px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+
+    @media(max-width: 900px) {
+      position: static;
+      max-width: inherit;
+      margin-bottom: 20px;
+    }
+
+    &-btn {
+      width: auto;
+      @media(max-width: 480px) {
+        width: 100%;
+        max-width: inherit;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 692px;
+    width: 692px;
+
+    @media(max-width: 900px) {
+      width: auto;
+    }
+
+    &-bg {
+      position: relative;
+      width: 100%;
+      left: 155px;
+
+      @media(max-width: 900px) {
+        position: static;
+      }
+    }
+  }
+}
